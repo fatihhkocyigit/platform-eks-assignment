@@ -1,0 +1,10 @@
+# AWS CDK Core Dependencies
+aws-cdk-lib
+constructs
+aws-cdk.lambda-layer-kubectl-v35
+
+# AWS SDK
+boto3
+botocore
+# Testing Dependencies
+pytest
