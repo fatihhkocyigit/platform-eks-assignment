@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+
+# Virtual environment
+.venv/
+env/
+
+# CDK
+cdk.out/
+cdk.context.json
+
+# Lambda build artifacts
+lambda/__pycache__/
+
+# IDE
+.vscode/
