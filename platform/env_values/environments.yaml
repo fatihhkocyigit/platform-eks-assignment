@@ -1,0 +1,58 @@
+# ------------------------------------------------------------------
+# We can use this yaml in the future, more ideal to control the flow
+# and future developments/changes. For this Lambda need to read the 
+# yaml file from an object store such as S3. Currently replica count
+# configs are hardcoded.
+# ------------------------------------------------------------------
+
+development:
+  ingress_replica_count: 1
+
+  fargate_config:
+    cpu: "0.25"       
+    memory: "0.5GB"   
+  ingress_resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "200m"     
+      memory: "256Mi"
+  enable_multi_az_nat: false
+  enable_fargate_logging: true
+  log_retention_days: 7
+  enable_termination_protection: false
+
+staging:
+  ingress_replica_count: 2
+  fargate_config:
+    cpu: "0.25"
+    memory: "0.5GB"
+  ingress_resources:
+    requests:
+      cpu: "200m"
+      memory: "256Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+  enable_multi_az_nat: false
+  enable_fargate_logging: true
+  log_retention_days: 14
+  enable_termination_protection: false
+
+production:
+  ingress_replica_count: 2
+  fargate_config:
+    cpu: "0.5"
+    memory: "1GB"
+  ingress_resources:
+    requests:
+      cpu: "500m"
+      memory: "512Mi"
+    limits:
+      cpu: "1000m"
+      memory: "1Gi"
+  enable_multi_az_nat: true
+  enable_fargate_logging: true
+  log_retention_days: 30
+  enable_termination_protection: true
