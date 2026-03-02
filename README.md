@@ -10,6 +10,9 @@ This repository contains AWS Python CDK that deploys:
 - SSM Parameter Store
 - Ingress-nginx Helm Chart
 
+For architectural diagram see Docs folder.
+
+
 ## Overview
 
 - **EKS cluster**, **AWS Fargate** type to be serverless, privately.
